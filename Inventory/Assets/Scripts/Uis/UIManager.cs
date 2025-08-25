@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager Instance = null;
+    private static UIManager instance;
+    public static UIManager Instance => instance;
 
     [Header("UI Position")]
     public Transform topArea;
@@ -16,9 +17,9 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        if(instance == null)
         {
-            Instance = this;
+            instance = this;
             DontDestroyOnLoad(gameObject);
             LoadUIPrefabsFromResources();
             foreach (UIType type in uiPrefabDict.Keys)

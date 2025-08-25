@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class BaseUnit : MonoBehaviour
 {
-    public Condition health;
+    public Condition hp;
     public Condition atk;
     public Condition def;
     public Condition exp;
