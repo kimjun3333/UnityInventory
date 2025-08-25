@@ -10,7 +10,7 @@ public class StatusUI : UIBase
     [SerializeField] TextMeshProUGUI hpText;
     [SerializeField] TextMeshProUGUI atkText;
     [SerializeField] TextMeshProUGUI defText;
-    [SerializeField] TextMeshProUGUI expText;
+    [SerializeField] TextMeshProUGUI criticalText;
 
     private void Start()
     {
@@ -19,12 +19,12 @@ public class StatusUI : UIBase
         player.hp.OnValueChanged += UpdateHP;
         player.atk.OnValueChanged += UpdateATK;
         player.def.OnValueChanged += UpdateDEF;
-        player.exp.OnValueChanged += UpdateEXP;
+        player.criticalChance.OnValueChanged += UpdateCriticalChance;
 
         UpdateHP(player.hp.CurValue);
         UpdateATK(player.atk.CurValue);
         UpdateDEF(player.def.CurValue);
-        UpdateEXP(player.exp.CurValue);
+        UpdateCriticalChance(player.criticalChance.CurValue);
     }
 
     void UpdateHP(float value)
@@ -39,9 +39,9 @@ public class StatusUI : UIBase
     {
         defText.text = $"방어력 : {value.ToString("F1")}";
     }
-    void UpdateEXP(float value)
+    void UpdateCriticalChance(float value)
     {
-        expText.text = $"경험치 : {value.ToString("F1")}";
+        criticalText.text = $"치명타 : {value.ToString("F1")}%";
     }
     
     public void TestAddBtn()
@@ -49,7 +49,7 @@ public class StatusUI : UIBase
         player.hp.Add(10f);
         player.atk.Add(30f);
         player.def.Add(50f);
-        player.exp.Add(100f);
+        player.criticalChance.Add(100f);
     }
 
     public void TestSubtractBtn()
@@ -57,6 +57,6 @@ public class StatusUI : UIBase
         player.hp.Subtract(10f);
         player.atk.Subtract(80f);
         player.def.Subtract(60f);
-        player.exp.Subtract(5f);
+        player.criticalChance.Subtract(5f);
     }
 }

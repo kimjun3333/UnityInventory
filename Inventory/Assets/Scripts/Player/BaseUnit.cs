@@ -8,4 +8,6 @@ public abstract class BaseUnit : MonoBehaviour
     public Condition atk;
     public Condition def;
     public Condition exp;
+    public Condition level;
+    public Condition criticalChance;
 }

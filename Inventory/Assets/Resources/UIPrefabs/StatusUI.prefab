@@ -1221,7 +1221,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7657006224896457166}
         m_TargetAssemblyTypeName: StatusUI, Assembly-CSharp
-        m_MethodName: TestSubstractBtn
+        m_MethodName: TestSubtractBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1613,7 +1613,7 @@ MonoBehaviour:
   hpText: {fileID: 7904571137651046983}
   atkText: {fileID: 7229542196378787560}
   defText: {fileID: 133157845514207420}
-  expText: {fileID: 9183728379773662745}
+  criticalText: {fileID: 9183728379773662745}
 --- !u!1 &7109191509546919552
 GameObject:
   m_ObjectHideFlags: 0

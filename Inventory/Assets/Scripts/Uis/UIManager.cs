@@ -104,4 +104,17 @@ public class UIManager : MonoBehaviour
 
         return instance; //생성한 인스턴스 반환
     }
-}
+
+    public void OpenUI(UIType type)
+    {
+        if(instantiateUI.TryGetValue(type, out GameObject ui) && ui != null)
+        {
+            ui.SetActive(true);
+        }
+    }
+
+    public void CloseUI(UIType type)
+    {
+
+    }
+}   

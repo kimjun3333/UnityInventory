@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Player : BaseUnit
 {
-    public string Class = "Warrior";
+    public string className = "Warrior";
+    public string playerName = "스파르탄";
+    public string description = "대충 설명";
 
     private void Start()
     {
