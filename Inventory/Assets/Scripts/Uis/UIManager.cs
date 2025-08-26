@@ -115,6 +115,21 @@ public class UIManager : MonoBehaviour
 
     public void CloseUI(UIType type)
     {
+        if (instantiateUI.TryGetValue(type, out GameObject ui) && ui != null)
+        {
+            ui.SetActive(false);
+        }
+    }
 
+    private void OnEnable()
+    {
+        UIEventSystem.OnRequestOpenUI += OpenUI;
+        UIEventSystem.OnRequestCloseUI += CloseUI;
+    }
+
+    private void OnDisable()
+    {
+        UIEventSystem.OnRequestOpenUI -= OpenUI;
+        UIEventSystem.OnRequestCloseUI -= CloseUI;
     }
 }   

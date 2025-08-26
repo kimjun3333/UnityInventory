@@ -15,7 +15,7 @@ public class MainUI : UIBase
     [SerializeField] Image expBar;
     [SerializeField] TextMeshProUGUI descriptionText;
 
-    private void Awake()
+    private void Start()
     {
         player = GameManager.Instance.player;
 
