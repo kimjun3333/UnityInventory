@@ -77,4 +77,5 @@ public class Player : BaseUnit
     {
         return equippedArmor != null ? equippedArmor.ability : 0;
     }
+
 }

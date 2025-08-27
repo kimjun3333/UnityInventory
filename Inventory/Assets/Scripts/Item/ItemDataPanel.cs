@@ -34,12 +34,10 @@ public class ItemDataPanel : MonoBehaviour
     public void OnClickEquip()
     {
         GameManager.Instance.player.EquipItem(currentItem);
-        //Hide();
     }
 
     public void OnClickUnEquip()
     {
         GameManager.Instance.player.UnEquipItem(currentItem);
-        //Hide();
     }
 }

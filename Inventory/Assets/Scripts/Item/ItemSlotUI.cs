@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ItemSlotUI : MonoBehaviour
 {
-    [SerializeField] Image image;
+    [SerializeField] private Image image;
     [SerializeField] private ItemDataPanel itemDataPanel;
-
     [SerializeField] private ItemData itemData;
     public ItemData ItemData
     {

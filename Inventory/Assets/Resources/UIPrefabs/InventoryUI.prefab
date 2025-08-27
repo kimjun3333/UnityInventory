@@ -677,7 +677,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 257182373571109796}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3829588988564924244}
+        m_TargetAssemblyTypeName: ItemDataPanel, Assembly-CSharp
+        m_MethodName: OnClickEquip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3955757964597140874
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,7 +810,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 279358306511212424}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3829588988564924244}
+        m_TargetAssemblyTypeName: ItemDataPanel, Assembly-CSharp
+        m_MethodName: OnClickUnEquip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4258634611627166357
 GameObject:
   m_ObjectHideFlags: 0
