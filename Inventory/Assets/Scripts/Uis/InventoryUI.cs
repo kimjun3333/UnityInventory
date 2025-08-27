@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class InventoryUI : UIBase
 {
-    public List<ItemData> items;
-
     [SerializeField] private GameObject slotPrefab;
     [SerializeField] private Transform slotParent;
+    [SerializeField] private ItemDataPanel itemDataPanel;
 
     [SerializeField] private List<ItemSlotUI> slotList = new();
+    public List<ItemData> items;
 
     public TextMeshProUGUI InvenText;
 
@@ -27,6 +27,10 @@ public class InventoryUI : UIBase
         {
             AddItem(items[0]);
         }
+        if (Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            AddItem(items[1]);
+        }
     }
 
     private void GenerateSlots(int count)
@@ -35,6 +39,7 @@ public class InventoryUI : UIBase
         {
             GameObject slotGo = Instantiate(slotPrefab, slotParent);
             ItemSlotUI slotUI = slotGo.GetComponentInChildren<ItemSlotUI>();
+            slotUI.SetPanel(itemDataPanel);
             slotList.Add(slotUI);
         }
     }
