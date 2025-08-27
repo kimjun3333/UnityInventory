@@ -16,7 +16,7 @@ public class ItemSlotUI : MonoBehaviour
             itemData = value;
             if(itemData != null )
             {
-                image.sprite = itemData.Icon;
+                image.sprite = itemData.icon;
                 image.color = new Color(1, 1, 1, 1);
             }
             else
