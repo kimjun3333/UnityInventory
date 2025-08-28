@@ -48,6 +48,7 @@ public class Player : BaseUnit
                 break;
         }
 
+        OnInventoryChanged?.Invoke();
         ApplyStat();
     }
 
@@ -66,6 +67,7 @@ public class Player : BaseUnit
                 break;
         }
 
+        OnInventoryChanged?.Invoke();
         ApplyStat();
     }
     private void ApplyStat()

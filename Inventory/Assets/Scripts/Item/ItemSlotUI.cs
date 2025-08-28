@@ -10,6 +10,7 @@ public class ItemSlotUI : MonoBehaviour
     [SerializeField] private Image image;
     [SerializeField] private ItemDataPanel itemDataPanel;
     [SerializeField] private ItemData itemData;
+    [SerializeField] private TextMeshProUGUI equipText;
     public ItemData ItemData
     {
         get { return itemData; }
@@ -20,6 +21,7 @@ public class ItemSlotUI : MonoBehaviour
             {
                 image.sprite = itemData.icon;
                 image.color = new Color(1, 1, 1, 1);
+                equipText.text = PlayerHasEquipped(itemData);
             }
             else
             {
@@ -45,5 +47,15 @@ public class ItemSlotUI : MonoBehaviour
         {
             itemDataPanel.Show(itemData);
         }
+    }
+
+    private string PlayerHasEquipped(ItemData item)
+    {
+        var player = GameManager.Instance.player;
+        if (item.type == ItemType.Weapon && player.equippedWeapon == item)
+            return "E";
+        if (item.type == ItemType.Armor && player.equippedArmor == item)
+            return "E";
+        return "";
     }
 }
