@@ -10,27 +10,22 @@ public class InventoryUI : UIBase
     [SerializeField] private ItemDataPanel itemDataPanel;
 
     [SerializeField] private List<ItemSlotUI> slotList = new();
-    public List<ItemData> items;
 
     public TextMeshProUGUI InvenText;
 
-    private void Awake()
+    private Player player;
+
+    private void Start()
     {
+        player = GameManager.Instance.player;
+        player.OnInventoryChanged += UpdateUI;
         GenerateSlots(4);
-        UpdateSlot();
-        UpdateText();
+        UpdateUI();
     }
 
-    private void Update()
+    private void OnDestroy()
     {
-        if (Input.GetKeyDown(KeyCode.Keypad1))
-        {
-            AddItem(items[0]);
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad2))
-        {
-            AddItem(items[1]);
-        }
+        player.OnInventoryChanged -= UpdateUI;
     }
 
     private void GenerateSlots(int count)
@@ -44,32 +39,23 @@ public class InventoryUI : UIBase
         }
     }
 
-    public void UpdateSlot()
+    public void UpdateUI()
     {
-        int i = 0;
-        for (; i < items.Count && i < slotList.Count; i++)
+        if(player.items.Count > slotList.Count)
         {
-            slotList[i].ItemData = items[i];
+            GenerateSlots(4);
+        }
+
+        int i = 0;
+        for (; i < player.items.Count && i < slotList.Count; i++)
+        {
+            slotList[i].ItemData = player.items[i];
         }
         for (; i < slotList.Count; i++)
         {
             slotList[i].ItemData = null;
         }
-    }
 
-    public void UpdateText()
-    {
-        InvenText.text = $"보유 {items.Count} / {slotList.Count}";
-    }
-
-    public void AddItem(ItemData item)
-    {
-        if (items.Count >= slotList.Count)
-        {
-            GenerateSlots(4);
-        }
-        items.Add(item);
-        UpdateSlot();
-        UpdateText();
+        InvenText.text = $"보유 {player.items.Count} / {slotList.Count}";
     }
 }

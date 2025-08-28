@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2bacec916127fe458e3a6d7b0a70eb3, type: 3}
-  m_Name: Shiled
+  m_Name: Sword
   m_EditorClassIdentifier: 
   ID: 0
-  displayName: "\uBC29\uD328"
-  description: "\uBC29\uD328\uB2E4"
+  displayName: "\uAC80"
+  description: "\uAC80\uC774\uB2E4"
   icon: {fileID: 21300000, guid: 8f28955d92038974a9b04aafaeea79b0, type: 3}
-  ability: 0
-  type: 1
+  ability: 3
+  type: 0

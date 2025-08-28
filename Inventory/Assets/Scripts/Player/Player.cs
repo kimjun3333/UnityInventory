@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,10 @@ public class Player : BaseUnit
 
     public ItemData equippedWeapon;
     public ItemData equippedArmor;
+
+    public List<ItemData> items = new();
+
+    public event Action OnInventoryChanged;
 
     private void Start()
     {
@@ -78,4 +83,15 @@ public class Player : BaseUnit
         return equippedArmor != null ? equippedArmor.ability : 0;
     }
 
+    public void AddItem(ItemData item)
+    {
+        items.Add(item);
+        OnInventoryChanged?.Invoke();
+    }
+
+    public void RemoveItem(ItemData item)
+    {
+        items.Remove(item);
+        OnInventoryChanged?.Invoke();
+    }
 }
