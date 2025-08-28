@@ -2154,6 +2154,7 @@ MonoBehaviour:
   expText: {fileID: 355535622398676615}
   expBar: {fileID: 8824540657180817339}
   descriptionText: {fileID: 9165687966079171088}
+  goldText: {fileID: 8733212677441450452}
 --- !u!1 &5022092761010698556
 GameObject:
   m_ObjectHideFlags: 0

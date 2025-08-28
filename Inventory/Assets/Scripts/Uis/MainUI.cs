@@ -14,6 +14,7 @@ public class MainUI : UIBase
     [SerializeField] TextMeshProUGUI expText;
     [SerializeField] Image expBar;
     [SerializeField] TextMeshProUGUI descriptionText;
+    [SerializeField] TextMeshProUGUI goldText;
 
     private void Start()
     {
@@ -21,12 +22,14 @@ public class MainUI : UIBase
 
         player.exp.OnValueChanged += UpdateExpBar;
         player.level.OnValueChanged += UpdateLevel;
+        player.gold.OnValueChanged += UpdateGold;
 
         UpdateClass(player.className);
         UpdateName(player.playerName);
         UpdateLevel(player.level.CurValue);
         UpdateExpBar(player.exp.CurValue);
         UpdateDescription(player.description);
+        UpdateGold(player.gold.CurValue);
     }
 
     void UpdateClass(string value)
@@ -53,6 +56,11 @@ public class MainUI : UIBase
     void UpdateDescription(string value)
     {
         descriptionText.text = value;
+    }
+
+    void UpdateGold(float value)
+    {
+        goldText.text = $"{value}G";
     }
 
     public void TestAddBtn()

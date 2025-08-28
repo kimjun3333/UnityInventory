@@ -47,6 +47,53 @@ MonoBehaviour:
   maxValue: 100
   minValue: 0
   curValue: 10
+--- !u!1 &2727028894543687729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6500168218243372740}
+  - component: {fileID: 8882195774448911262}
+  m_Layer: 0
+  m_Name: gold
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6500168218243372740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2727028894543687729}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3480524041277856810}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8882195774448911262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2727028894543687729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a5907d500dde549990f1378b35e4a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxValue: 1000000
+  minValue: 0
+  curValue: 1000
 --- !u!1 &3249061037785883001
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,6 +364,7 @@ Transform:
   - {fileID: 3848998353100406141}
   - {fileID: 7840877527150002046}
   - {fileID: 7981810138373840181}
+  - {fileID: 6500168218243372740}
   - {fileID: 6134181623206045771}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -337,7 +385,11 @@ MonoBehaviour:
   def: {fileID: 7191880378052548080}
   exp: {fileID: 2791653675314904426}
   level: {fileID: 6655409349669499351}
+  gold: {fileID: 8882195774448911262}
   criticalChance: {fileID: 1070949151969839059}
   className: Warrior
   playerName: "\uC2A4\uD30C\uB974\uD0C4"
   description: "\uB300\uCDA9 \uC124\uBA85"
+  equippedWeapon: {fileID: 0}
+  equippedArmor: {fileID: 0}
+  items: []

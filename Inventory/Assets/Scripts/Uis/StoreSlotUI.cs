@@ -11,6 +11,8 @@ public class StoreSlotUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI itemAbility;
     [SerializeField] private TextMeshProUGUI itemPrice;
 
+    [SerializeField] private Button buyBtn;
+
     private ItemData itemData;
 
     public ItemData ItemData
@@ -37,5 +39,14 @@ public class StoreSlotUI : MonoBehaviour
         string abilityType = item.type == ItemType.Weapon ? "공격력" : "방어력";
         itemAbility.text = $"{abilityType} + {item.ability}";
         itemPrice.text = $"{item.price}G";
+    }
+
+    public void BuyItem()
+    {
+        if(GameManager.Instance.player.gold.CurValue >= ItemData.price)
+        {
+            GameManager.Instance.player.gold.CurValue -= ItemData.price;
+            GameManager.Instance.player.AddItem(itemData);
+        }
     }
 }

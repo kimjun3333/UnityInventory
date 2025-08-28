@@ -9,5 +9,6 @@ public abstract class BaseUnit : MonoBehaviour
     public Condition def;
     public Condition exp;
     public Condition level;
+    public Condition gold;
     public Condition criticalChance;
 }
