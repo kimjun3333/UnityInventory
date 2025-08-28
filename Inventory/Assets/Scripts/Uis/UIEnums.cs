@@ -11,7 +11,8 @@ public enum LayerType
 
 public enum UIType
 {
+    Main,
     Status,
-    Info,
-    Upgrade
+    Inventory,
+    Store   
 }
